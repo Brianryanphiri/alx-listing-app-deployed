@@ -1,67 +1,113 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Logo from "@/public/assets/Logo-white.png";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#232323] text-[#e0e0e0] pt-12 pb-4 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo and Description */}
-        <div className="md:col-span-1 flex flex-col">
-          <div className="mb-4">
-            <Image
-              src="/assets/Vector.png"
-              alt="ALX Logo"
-              width={60}
-              height={60}
-              className="mb-2"
-            />
-          </div>
-          <p className="text-base leading-relaxed">
-            ALX is a platform where travelers can discover and book unique, comfortable, and affordable lodging options worldwide. From cozy city apartments and tranquil countryside retreats to exotic beachside villas, ALX connects you with the perfect place to stay for any trip.
+    <footer className="bg-black text-gray-200 border-t-16 border-teal-500 px-4 py-12 md:px-8">
+      <div className="max-w-7xl mx-auto ">
+        {/* logo */}
+        <div className="lg:hidden">
+          <Image src={Logo} alt="star" className="mb-6" />
+          <p className="max-w-2xl mb-8">
+            ALX is a platform where travelers can discover and book unique,
+            comfortable, and affordable lodging options worldwide. From cozy
+            city apartments and tranquil countryside retreats to exotic
+            beachside villas, ALX connects you with the perfect place to stay
+            for any trip.
           </p>
         </div>
-        {/* Explore */}
-        <div>
-          <h3 className="text-lg font-normal mb-3 text-white">Explore</h3>
-          <ul className="space-y-2">
-            <li>Apartments in Dubai</li>
-            <li>Hotels in New York</li>
-            <li>Villa in Spain</li>
-            <li>Mansion in Indonesia</li>
-          </ul>
+
+        {/* Mobile view links */}
+        <div className="lg:hidden space-y-6 mb-8">
+          <div>
+            <h2 className="text-lg font-semibold mb-2">Explore</h2>
+            <ul className="space-y-1">
+              <li>Apartments in Dubai</li>
+              <li>Hotels in New York</li>
+              <li>Villa in Spain</li>
+              <li>Mansion in Indonesia</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold mb-2">Company</h2>
+            <ul className="space-y-1">
+              <li>About us</li>
+              <li>Blog</li>
+              <li>Career</li>
+              <li>Customers</li>
+              <li>Brand</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-lg font-semibold mb-2">Help</h2>
+            <ul className="space-y-1">
+              <li>Support</li>
+              <li>Cancel booking</li>
+              <li>Refunds Process</li>
+            </ul>
+          </div>
         </div>
-        {/* Company */}
-        <div>
-          <h3 className="text-lg font-normal mb-3 text-white">Company</h3>
-          <ul className="space-y-2">
-            <li>About us</li>
-            <li>Blog</li>
-            <li>Career</li>
-            <li>Customers</li>
-            <li>Brand</li>
-          </ul>
+        {/* desktop and border view */}
+        <div className="hidden lg:block mb-8">
+          <div className="grid grid-cols-4 gap-8">
+            <div className="">
+              {/* logo */}
+              <Image src={Logo} alt="star" className="mb-6" />
+              <p className="max-w-3xl mb-8">
+                ALX is a platform where travelers can discover and book unique,
+                comfortable, and affordable lodging options worldwide. From cozy
+                city apartments and tranquil countryside retreats to exotic
+                beachside villas, ALX connects you with the perfect place to
+                stay for any trip.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-2">Explore</h2>
+              <ul className="space-y-1">
+                <li>Apartments in Dubai</li>
+                <li>Hotels in New York</li>
+                <li>Villa in Spain</li>
+                <li>Mansion in Indonesia</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-2">Company</h2>
+              <ul className="space-y-1">
+                <li>About us</li>
+                <li>Blog</li>
+                <li>Career</li>
+                <li>Customers</li>
+                <li>Brand</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-2">Help</h2>
+              <ul className="space-y-1">
+                <li>Support</li>
+                <li>Cancel booking</li>
+                <li>Refunds Process</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        {/* Help */}
-        <div>
-          <h3 className="text-lg font-normal mb-3 text-white">Help</h3>
-          <ul className="space-y-2">
-            <li>Support</li>
-            <li>Cancel booking</li>
-            <li>Refunds Process</li>
-          </ul>
-        </div>
-      </div>
-      {/* Notice */}
-      <div className="max-w-7xl mx-auto mt-10 border-t border-[#444] pt-6 flex flex-col md:flex-row md:items-center md:justify-between text-sm">
-        <div className="mb-4 md:mb-0 text-[#e0e0e0]">
-          Some hotel requires you to cancel more than 24 hours before check-in. Details{' '}
-          <a href="#" className="text-[#2ec4b6] underline hover:text-[#20b2aa]">here</a>
-        </div>
-        <div className="flex flex-wrap gap-x-8 gap-y-2 text-[#e0e0e0]">
-          <a href="#" className="hover:underline">Terms of Service</a>
-          <a href="#" className="hover:underline">Policy service</a>
-          <a href="#" className="hover:underline">Cookies Policy</a>
-          <a href="#" className="hover:underline">Partners</a>
+
+        <div className="flex flex-col items-center justify-between lg:flex-row ">
+          <div className="text-sm mb-6 lg:mb-0">
+            <h2>
+              Some hotel requires you to cancel more than 24 hours before
+              check-in.
+              <span className="underline cursor-pointer ml-1 text-teal-700">
+                Details here
+              </span>
+            </h2>
+          </div>
+          <div className="flex flex-row gap-4 text-sm ">
+            <span className="cursor-pointer">Terms of Service</span>
+            <span className="cursor-pointer">Policy service</span>
+            <span className="cursor-pointer">Cookies Policy</span>
+            <span className="cursor-pointer hidden md:flex">Partners</span>
+          </div>
         </div>
       </div>
     </footer>

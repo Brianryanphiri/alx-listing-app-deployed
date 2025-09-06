@@ -1,51 +1,74 @@
-export interface CardProps {
-    title: string
-    description: string
-    imageUrl: string
-    price: number
-}
-
 export interface ButtonProps {
-    children: React.ReactNode
-    label?: string
-    onClick?: () => void
-    variant?: 'primary' | 'secondary'
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-
-export interface PROPERTYLISTINGSAMPLEProps {
-    id: number
-    name: string;
-    description: string;
-    image: string;
-    price: number;
-    rating: number;
+export interface CardProps {
+  title: string;
+  description: string;
+  children?: React.ReactNode;
+  className?: string;
 }
 
-export interface PropertyCardProps {
-    property : PROPERTYLISTINGSAMPLEProps
-    key: number
-}
-
-export interface PropertyDetailProps {
-    property: PropertyProps
-}
 
 export interface PropertyProps {
-    name: string;
-    address: {
-      state: string;
-      city: string;
-      country: string;
+  name: string;
+  address: {
+    state?: string;
+    city: string;
+    country: string;
   };
-   rating: number;
-   category: string[];
-   price: number;
-    offers: {
+  rating: number;
+  category: string[];
+  price: number;
+  offers: {
     bed: string;
     shower: string;
     occupants: string;
   };
-   image: string;
-   discount?: string;
+  image: string;
+  discount: string;
+}
+
+export interface PropertyCardProps {
+  property: PropertyProps;
+}
+
+
+export interface PillProps {
+  label: string;
+  isActive: boolean;
+  onClick: () => void;
+}
+
+export interface PropertyDescProps extends PropertyProps {
+  id: number;
+  reviewCount: number;
+  description: string;
+  amenities: string[];
+  images: string[];
+}
+
+export interface PropertyDetailProps {
+  property: PropertyDescProps;
+}
+
+export interface ReviewProps {
+  id: number;
+  name: string;
+  avatar: string;
+  rating: string;
+  comment: string;
+  date: string;
+  yearsOnPlatform: string;
+  tripType: string;
+}
+
+export interface AccommodationType {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
 }

@@ -1,16 +1,20 @@
-import React from "react"
-import { CardProps } from "@/interfaces"
+// components/common/Card.tsx
+import React from "react";
+import { CardProps } from "../../interfaces";
 
-const Card: React.FC<CardProps> = ({title, description, imageUrl, price}) => {
-    return (
-       <div className="flex flex-col h-screen">
-          <main>
-             <h1>Title: {title}</h1>
-             <p>{description}</p>
-             <p>View image: {imageUrl}</p>
-             <h3>Price: {price}</h3>
-          </main>
-       </div>
-    )
-}
-export default Card
+const Card: React.FC<CardProps> = ({
+  title = "Card Title",
+  description = "Card description goes here.",
+  children,
+  className = "",
+}) => {
+  return (
+    <div className={`p-6 rounded-lg shadow-md bg-white ${className}`}>
+      {title && <h2 className="text-xl font-bold mb-2">{title}</h2>}
+      {description && <p className="text-gray-700 mb-4">{description}</p>}
+      {children}
+    </div>
+  );
+};
+
+export default Card;

@@ -1,6 +1,19 @@
-git# ALX Listing App 03
+# ALX Listing App
 
-The ALX Listing App project aims to scaffold and lay the foundational structure for a modern Airbnb clone. This initial milestone focuses on setting up a well-organized and scalable codebase using Next.js, TypeScript, TailwindCSS, and ESLint. By establishing a clean folder structure, reusable components, and adhering to best practices, the project ensures a solid starting point for building a dynamic, responsive, and user-friendly property listing page.
+A basic Airbnb-style listing page built with Next.js, TypeScript, TailwindCSS, and ESLint.
 
-## Additional Feature
-Develop Responsive Booking Detail Page with User Input and Payment Processing
+## 📁 Project Structure
+
+- `components/`: Contains reusable UI components like `Card` and `Button`
+- `interfaces/`: Stores all TypeScript interfaces used in the app
+- `constants/`: Holds static constants like placeholder image paths
+- `public/assets/`: Static image assets
+- `styles/globals.css`: Tailwind setup
+- `tailwind.config.js` and `postcss.config.js`: Tailwind configuration
+
+## 🚀 Getting Started
+
+```bash
+npm install
+npm run dev
+```
