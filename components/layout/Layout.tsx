@@ -1,8 +1,12 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { CardProps } from "@/interfaces/index";
+import { ReactNode } from "react";
 
-const Layout: React.FC<CardProps> = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Header />
